@@ -1,3 +1,6 @@
-<h1>Pages#index</h1>
+<% if current_user %>
+<h1>Welcom <%= current_user.name %></h1>
+<% end %>
+
 <p>Find me in app/views/pages/index.html.erb</p>
 <p><%= @test %></p>

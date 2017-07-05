@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'twitter-bootstrap-rails'
 gem 'devise'
 gem 'paperclip'
+gem 'jquery-rails'
 
 
 group :development, :test do

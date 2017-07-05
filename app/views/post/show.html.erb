@@ -1,12 +1,20 @@
-<h1>Post#show</h1>
-<p>Find me in app/views/post/show.html.erb</p>
+<h1>Posts</h1>
+
+
 <% @posts.each do |post| %>
-<ul>
-	<li><%= post.title %></li>
-	<li><%= post.body %></li>
-	<li><a href="/hashtags_list/<%= post.hashtag %>">#<%= post.hashtag %></a></li>
-</ul>
+
+<div class="card">
+  <div class="card-block">
+    <h4 class="card-title"><%= post.title %></h4>
+    <h6 class="card-subtitle mb-2 text-muted"><%= post.updated_at.strftime('%F %T') %> - <%= post.user %> !! user ...</h6>
+    <p class="card-text"><%= post.body %></p>
+    <a href="/hashtags_list/<%= post.hashtag %>" class="card-link">#<%= post.hashtag %></a>
+  </div>
+</div>
+<hr>
 <% end %>
+
+
 
 <%= form_tag "/post_create", method: "post" do %>
   <input type="text" name="title" />
