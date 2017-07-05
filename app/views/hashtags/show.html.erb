@@ -1,0 +1,9 @@
+<h1>#<%= @paramHashtag %></h1>
+
+<p>(vous) <%= current_user.email %></p>
+<%= @hashtags.each do |hashtag| %>
+	<ul>
+	<li><%= hashtag.title %></li>
+	<li><%= hashtag.body %></li>
+	</ul>
+<% end %>

@@ -4,11 +4,13 @@
 <ul>
 	<li><%= post.title %></li>
 	<li><%= post.body %></li>
+	<li><a href="/hashtags_list/<%= post.hashtag %>">#<%= post.hashtag %></a></li>
 </ul>
 <% end %>
 
 <%= form_tag "/post_create", method: "post" do %>
   <input type="text" name="title" />
   <input type=text" name="body" />
+  <input type="text" name="hashtag" />
   <input type="submit" value="tweeter" />
 <% end %>

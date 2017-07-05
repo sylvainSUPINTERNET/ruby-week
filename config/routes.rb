@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
 
 
+  get 'hashtags_list/:hashtag' => 'hashtags#show'
+
   get 'post_show' => 'post#show'
-  
+
   post 'post_create' => 'post#create'
 
   get 'post/edit'
 
   get 'post/delete'
 
+
+ 
 
   root 'pages#index'
 
