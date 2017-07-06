@@ -1,6 +1,6 @@
 class PostController < ApplicationController
   def show
-  	@posts = Post.all
+  	@posts = Post.order('created_at DESC')
   end
 
   def edit
