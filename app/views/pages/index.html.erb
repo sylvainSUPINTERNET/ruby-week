@@ -1,6 +1,20 @@
 <% if current_user %>
 <h1>Welcom <%= current_user.name %></h1>
-<% end %>
 
-<p>Find me in app/views/pages/index.html.erb</p>
-<p><%= @test %></p>
+<div class="card mb-3">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-block">
+    <p class="card-text"><%= current_user.email %></p>
+    <p class="card-text"><small class="text-muted"><%= current_user.updated_at.strftime("%d- %m - %Y") %></small></p>
+    <p class="card-text"><small class="text-muted">FOLLOWERS TO DO </small></p>
+  </div>
+</div>	
+
+<% else %>
+
+<p class="text-center">Connecté vous !
+
+
+</p>
+
+<% end %>

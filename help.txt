@@ -1,3 +1,12 @@
 rails g migration add_column_to_post hashtag: string
 
 rake db:migrate
+
+
+
+vagrant up 
+
+
+vagrant ss
+
+cd /vagrant
