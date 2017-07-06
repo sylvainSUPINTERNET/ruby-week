@@ -3,6 +3,9 @@ class HashtagsController < ApplicationController
   	@paramHashtag = params[:hashtag]
   	@hashtags = Post.where(:hashtag => @paramHashtag)
 
+  	    @trands = Post.order('like DESC').limit(3)
+
+
   end
 
  # def current_user

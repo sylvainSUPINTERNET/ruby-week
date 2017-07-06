@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   get 'post/delete'
 
+  get '/post/like/:id_post' => 'post#like'
 
  
 

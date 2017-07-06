@@ -1,4 +1,4 @@
-<h1>Posts</h1>
+<h1>Tweets</h1>
 
 
 <% @posts.each do |post| %>
@@ -10,6 +10,17 @@
     <p class="pull-right"><%= post.user %></p>
     <p class="card-text"><%= post.body %></p>
     <a href="/hashtags_list/<%= post.hashtag %>" class="card-link">#<%= post.hashtag %></a>
+    <br>
+    <br>
+
+       <% if user_signed_in? %>
+
+       <a class="btn btn-primary" href="/post/like/<%= post.id %>" >Like</a><%= post.like %> 
+       <%else%>
+      	Like : <%= post.like %> 
+       <%end%>
+				
+   
   </div>
 </div>
 <hr>

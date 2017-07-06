@@ -37,7 +37,8 @@
         <a class="navbar-brand" href="/">Gazooyr</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Tweet", "post_show"  %></li>
+          <!--<li><%= link_to "Tweet", "post_show"  %></li>-->
+            <li><a href="/post_show">Tweet</a></li>
         
 
 
@@ -47,7 +48,7 @@
 
           <ul class="nav navbar-nav navbar-right">
 
-            <% if user_signed_in? %>
+    <% if user_signed_in? %>
   <li>
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>  
   </li>
@@ -69,15 +70,22 @@
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
+                        <%if @trands %>
+
         <div class="col-lg-3">
           <div class="well sidebar-nav">
-            <h3>Tendance</h3>
+            <h3 class="text-center">Tendance</h3>
             <ul class="nav nav-list">
               <li class="nav-header"></li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+                    <% @trands.each do |trand| %>
+                    <li>
+                    <%= trand.title %> <br> <a href="/hashtags_list/<%= trand.hashtag %>">#<%= trand.hashtag %></a>
+                    </li>
+                    <hr>
+                <% end %>
             </ul>
+                          <%end%>
+
           </div><!--/.well -->
 
 <% if user_signed_in? %>
