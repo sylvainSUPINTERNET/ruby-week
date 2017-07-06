@@ -1,24 +1,43 @@
-# README
+# Dependencies
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+         Bootstrap twitter
+         
+         
+         Devise 
+         
+         
+         PaperClip
 
-Things you may want to cover:
+## Init my project
 
-* Ruby version
+* Shell
 
-* System dependencies
+        vagrant up 
 
-* Configuration
 
-* Database creation
+        vragrant ssh 
 
-* Database initialization
 
-* How to run the test suite
+        cd /vagrant
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+        cd project 
 
-* ...
+
+        bundle install
+
+
+## Ppl into DB
+
+* Shell
+
+        rails c
+
+
+        post1 = Post.new
+
+
+        post1.title = "" / post1.body = "" / post1.hashtag = "" / post.user="Toto" / post1.like = 0
+
+
+* Add new User (connection / register / login on App using Devise )
