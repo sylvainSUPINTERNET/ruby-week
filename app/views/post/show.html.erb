@@ -1,24 +1,33 @@
 <h1>Tweets</h1>
 
-
+<br>	
 <% @posts.each do |post| %>
 
 <div class="card">
   <div class="card-block">
-    <h4 class="card-title"><%= post.title %></h4>
-    <h6 class="card-subtitle mb-2 text-muted"><%= post.updated_at.strftime('%F %T') %></h6>
-    <p class="pull-right"><%= post.user %></p>
-    <p class="card-text"><%= post.body %></p>
-    <a href="/hashtags_list/<%= post.hashtag %>" class="card-link">#<%= post.hashtag %></a>
+    <h4 class="card-title"><strong><%= post.title %></strong></h4>
+    <h6 class="card-subtitle mb-2 text-muted pull-right"><%= post.updated_at.strftime('%F %T') %></h6>
+      <blockquote class="blockquote">
+  <p class="mb-0"><%= post.body %></p>
+  <footer class="blockquote-footer"><a href="/hashtags_list/<%= post.hashtag %>" class="card-link">#<%= post.hashtag %> </a> <cite title="Author"></cite><%= post.user %>
+</footer>
+</blockquote>
+
     <br>
     <br>
 
        <% if user_signed_in? %>
 
-       <a class="btn btn-primary" href="/post/like/<%= post.id %>" >Like</a><%= post.like %> 
+       <a class="btn btn-danger pull-right" href="/post/like/<%= post.id %>" >
+         <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+       </a>   
+
+       <span class="badge"> <%= post.like %></span>
        <%else%>
-      	Like : <%= post.like %> 
+      	         <span class="glyphicon glyphicon-heart" style="color:red" aria-hidden="true"></span>
+  <span class="badge" alt="like"><%= post.like %>
        <%end%>
+
 				
    
   </div>
