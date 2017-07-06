@@ -1,0 +1,15 @@
+
+<h1>Profile de <%= @userProfile.name %></h1>
+
+
+<div class="card mb-3">
+<div class="pull-right"><%= image_tag(@userProfile.avatar.url(:medium)) %>
+	
+</div>
+
+
+  <div class="card-block">
+    <p class="card-text"><%= @userProfile.email %></p>
+    <p class="card-text"><small class="text-muted">Crée le <%= @userProfile.updated_at.strftime("%d- %m - %Y") %></small></p>
+  </div>
+</div>	

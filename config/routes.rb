@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'user/profile'
+
   get 'hashtags_list/:hashtag' => 'hashtags#show'
 
   get 'post_show' => 'post#show'
@@ -13,6 +15,8 @@ Rails.application.routes.draw do
 
   get '/post/like/:id_post' => 'post#like'
 
+
+  get '/user/profile/:id' => 'user#profile'
  
 
   root 'pages#index'
