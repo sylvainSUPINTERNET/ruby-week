@@ -1,8 +1,8 @@
 class UserController < ApplicationController
   def profile
-  	@idUserToSearch = params[:id]
+  	@nameUserToSearch = params[:username]
 
-  	@userProfile = User.find(@idUserToSearch)
+  	@userProfile = User.where(:name => @nameUserToSearch)
 
 
   	 @trands = Post.order('like DESC').limit(3)

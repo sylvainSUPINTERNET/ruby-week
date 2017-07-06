@@ -9,7 +9,13 @@
     <h6 class="card-subtitle mb-2 text-muted pull-right"><%= post.updated_at.strftime('%F %T') %></h6>
       <blockquote class="blockquote">
   <p class="mb-0"><%= post.body %></p>
-  <footer class="blockquote-footer"><a href="/hashtags_list/<%= post.hashtag %>" class="card-link">#<%= post.hashtag %> </a> <cite title="Author"></cite><%= post.user %>
+  <footer class="blockquote-footer"><a href="/hashtags_list/<%= post.hashtag %>" class="card-link">#<%= post.hashtag %> </a> <cite title="Author"></cite>
+       <% if user_signed_in? %>
+           <a href="/user/profile/<%= post.user %>"> <%= post.user %></a>
+      <% else %>
+            <%= post.user %>
+      <% end %>
+
 </footer>
 </blockquote>
 

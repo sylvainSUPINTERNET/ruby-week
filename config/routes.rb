@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/post/like/:id_post' => 'post#like'
 
 
-  get '/user/profile/:id' => 'user#profile'
+  get '/user/profile/:username' => 'user#profile'
  
 
   root 'pages#index'
