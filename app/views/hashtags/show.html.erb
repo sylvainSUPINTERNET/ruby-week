@@ -1,9 +1,17 @@
 <h1>#<%= @paramHashtag %></h1>
 
-<p>(vous) <%= current_user.email %></p>
-<%= @hashtags.each do |hashtag| %>
-	<ul>
-	<li><%= hashtag.title %></li>
-	<li><%= hashtag.body %></li>
-	</ul>
+<% @hashtags.each do |hashtag| %>
+
+	<div class="card">
+  <div class="card-block">
+    <h4 class="card-title"><%= hashtag.title %></h4>
+    <h6 class="card-subtitle mb-2 text-muted"><%= hashtag.updated_at.strftime('%F %T') %></h6>
+    <p class="pull-right"><%= hashtag.user %></p>
+    <p class="card-text"><%= hashtag.body %></p>
+    <p class="card-link">#<%= hashtag.hashtag %></p>
+  </div>
+</div>
+<hr>
 <% end %>
+
+

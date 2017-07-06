@@ -1,7 +1,7 @@
 class HashtagsController < ApplicationController
   def show
   	@paramHashtag = params[:hashtag]
-  	@hashtags = Post.where(:hashtag => @paramHashtag).to_a
+  	@hashtags = Post.where(:hashtag => @paramHashtag)
 
   end
 
