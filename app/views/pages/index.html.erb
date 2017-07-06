@@ -1,8 +1,15 @@
 <% if current_user %>
 <h1>Welcom <%= current_user.name %></h1>
 
+        
+
+
 <div class="card mb-3">
-  <img class="card-img-top" src="..." alt="Card image cap">
+<div class="pull-right"><%= image_tag(current_user.avatar.url(:medium)) %>
+	
+</div>
+
+
   <div class="card-block">
     <p class="card-text"><%= current_user.email %></p>
     <p class="card-text"><small class="text-muted"><%= current_user.updated_at.strftime("%d- %m - %Y") %></small></p>
@@ -12,9 +19,8 @@
 
 <% else %>
 
-<p class="text-center">Connecté vous !
-
-
+<p class="text-center">
+  <%= link_to('Connecté vous !', new_user_session_path)  %>  
 </p>
 
 <% end %>

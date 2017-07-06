@@ -8,7 +8,10 @@ protected
 
   def configure_permitted_parameters
 
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+    attributes = [:name, :avatar]
+
+    devise_parameter_sanitizer.permit(:sign_up, keys: attributes )
+
 
   end
   
